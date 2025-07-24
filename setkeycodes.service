@@ -1,0 +1,10 @@
+[Unit]
+Description=Set keycode for HDMI input button
+After=multi-user.target
+
+[Service]
+ExecStart=/bin/sh -c "/usr/bin/setkeycodes e07f 191"
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

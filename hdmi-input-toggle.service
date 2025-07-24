@@ -1,0 +1,17 @@
+[Unit]
+Description=HDMI Input Toggle Listener
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/hdmi-input-toggle.py
+Restart=on-failure
+RestartSec=5
+User=vmark
+Group=vmark
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
